@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Product — MERAK Clothing</title>
+<meta name="description" content="Heavy-duty everyday essentials from MERAK. Details, fit, fabric and honest sizing on every product page." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="product">
+
+<div id="siteHeader"></div>
+
+<main>
+  <section class="pagehero" style="padding-block:clamp(22px,3vw,34px)">
+    <div class="wrap">
+      <div class="crumbs"><a href="index.html">Home</a> → <a href="shop.html">Shop</a> → <a id="pCrumbCat" href="shop.html">Category</a> → <b id="pCrumbName">Product</b></div>
+    </div>
+  </section>
+
+  <section class="sec wrap" style="padding-top:0">
+    <div class="pwrap">
+      <div class="gallery">
+        <div class="gallery__thumbs" id="gThumbs"></div>
+        <div class="gallery__main" id="gMain"></div>
+      </div>
+
+      <div class="pinfo">
+        <a class="pcard__cat" id="pCat" href="shop.html">Category</a>
+        <h1 id="pName">Product</h1>
+        <div class="prate" id="pRate"></div>
+        <div class="pprice" id="pPrice"></div>
+        <p class="pdesc" id="pDesc"></p>
+
+        <div class="plabel">Colour <span class="mono" id="pColLabel" style="text-transform:none;letter-spacing:0;opacity:.6"></span></div>
+        <div class="dots" id="pColours"></div>
+
+        <div class="plabel">Size <button data-size-open>Size guide</button></div>
+        <div class="chips" id="pSizes"></div>
+
+        <div class="qtyrow">
+          <div class="qty"><button id="pQtyDec" aria-label="Decrease quantity">−</button><span id="pQty">1</span><button id="pQtyInc" aria-label="Increase quantity">+</button></div>
+          <div class="pacts">
+            <button class="btn btn--accent" id="pAdd">Add to bag</button>
+            <button class="iconbtn" id="pWishBtn" aria-label="Save to wishlist">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M12 20s-7-4.6-7-9.4A4 4 0 0 1 12 8a4 4 0 0 1 7 2.6C19 15.4 12 20 12 20z"/></svg>
+            </button>
+          </div>
+        </div>
+        <button class="btn btn--lime btn--full" id="pBuy" style="margin-top:10px">Buy it now</button>
+
+        <div class="trust">
+          <div><b>2–6 days</b><span>Delivery across India</span></div>
+          <div><b>Free</b><span>15-day returns</span></div>
+          <div><b>COD</b><span>Available up to ₹5,000</span></div>
+        </div>
+
+        <div class="acc">
+          <button>Details &amp; fit <i>+</i></button>
+          <div class="acc__a">
+            <p id="pDesc2"></p>
+            <ul>
+              <li><span>Fabric</span><b id="pFab"></b></li>
+              <li><span>Fit</span><b id="pFit"></b></li>
+              <li><span>Made in</span><b>India</b></li>
+              <li><span>GST invoice</span><b>Included</b></li>
+            </ul>
+          </div>
+        </div>
+        <div class="acc">
+          <button>Shipping &amp; returns <i>+</i></button>
+          <div class="acc__a"><p>Free shipping on orders above ₹2,499, otherwise ₹79. Orders ship within 24 hours. Free returns and size exchanges within 15 days of delivery — tags on, unworn, doorstep pickup arranged.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="background:var(--paper-2);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">Goes well with</span><h2>You may <em>also like.</em></h2></div></div>
+      <div class="rail" id="related"></div>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="viewedWrap" style="display:none;padding-top:0">
+    <div class="head"><div><span class="eyebrow">Keep browsing</span><h2>Recently <em>viewed.</em></h2></div></div>
+    <div class="rail" id="viewed"></div>
+  </section>
+</main>
+
+<div id="siteFooter"></div>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

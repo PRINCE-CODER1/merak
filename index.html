@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MERAK — Wear your story | Modern Clothing Store</title>
+<meta name="description" content="MERAK is a modern clothing label making heavy-duty everyday essentials. T-shirts, hoodies, denim, outerwear and more — cut, sewn and printed in India." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="home">
+
+<div id="siteHeader"></div>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero__in">
+      <div class="rv in">
+        <span class="eyebrow">New drop · every Friday</span>
+        <h1 style="margin-top:18px">Wear your<br><span class="accent">story.</span><br>Own the <span class="pop">fit.</span></h1>
+        <p class="hero__sub">Heavy-duty essentials cut from real fabric — not fast-fashion thin. Tees that don't turn see-through, hoodies with actual fleece, denim that survives the laundry.</p>
+        <div class="hero__cta">
+          <a class="btn btn--accent btn--lg" href="shop.html">Shop the drop →</a>
+          <a class="btn btn--ghost btn--lg" href="lookbook.html">See the lookbook</a>
+        </div>
+        <div class="hero__meta">
+          <div><b data-stat="products">0</b><span>Styles live now</span></div>
+          <div><b data-stat="orders">0</b><span>Orders shipped</span></div>
+          <div><b data-stat="rating">0</b><span>Average rating</span></div>
+        </div>
+      </div>
+      <div class="hero__col">
+        <div class="hero__media a">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Editorial fashion look" loading="eager" onerror="this.style.display='none'">
+          <div class="hero__tick"><i></i> Fresh drop is live</div>
+        </div>
+        <div class="hero__media b">
+          <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80" alt="Folded t-shirts" loading="eager" onerror="this.style.display='none'">
+          <div class="hero__tick"><i></i> 15-day returns</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STRIP ============ -->
+  <div class="strip" aria-hidden="true">
+    <div class="strip__track" id="stripTrack"></div>
+  </div>
+
+  <!-- ============ CATEGORIES ============ -->
+  <section class="sec wrap" id="shop" style="padding-top:clamp(40px,5vw,64px)">
+    <div class="head">
+      <div>
+        <span class="eyebrow">Shop by category</span>
+        <h2>Pick your <em>racket.</em></h2>
+      </div>
+      <p>Seven categories, one standard — thick fabric, honest cuts, fair prices. Every rack ships in 24 hours.</p>
+    </div>
+    <div class="cats" id="homeCats"></div>
+  </section>
+
+  <!-- ============ TRENDING ============ -->
+  <section class="sec" style="background:var(--paper-2);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">Trending now</span>
+          <h2>Everyone's <em>grabbing</em> these.</h2>
+        </div>
+        <a class="more" href="shop.html">View all styles →</a>
+      </div>
+      <div class="rail" id="homeTrend"></div>
+    </div>
+  </section>
+
+  <!-- ============ EDITORIAL BANNER ============ -->
+  <section class="sec wrap">
+    <div class="banner rv">
+      <div class="media"><img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1600&q=80" alt="Clothes rail" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="banner__in">
+        <span class="eyebrow">The Friday drop</span>
+        <h2>New rack,<br>same obsession.</h2>
+        <p>Fresh styles land every week — small runs, printed and cut in India. When a piece is gone, it's gone.</p>
+        <a class="btn btn--lime btn--lg" href="shop.html?flag=new">Shop what's new</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOOKBOOK ============ -->
+  <section class="sec wrap" id="looks" style="padding-top:0">
+    <div class="head">
+      <div>
+        <span class="eyebrow">Shop the look</span>
+        <h2>Three fits,<br>one <em>tap.</em></h2>
+      </div>
+      <p>Styling, done for you. Add the whole set and a 10% bundle price applies automatically.</p>
+    </div>
+    <div class="looks" id="homeLooks"></div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="sec" style="background:var(--lav);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow">From the community</span>
+          <h2>People actually <em>wrote</em> this.</h2>
+        </div>
+        <p>Verified buyers only. No fake reviews, no incentives — just real feedback from real orders.</p>
+      </div>
+      <div class="revs" id="homeRevs"></div>
+    </div>
+  </section>
+
+  <!-- ============ STORY ============ -->
+  <section class="sec wrap" id="story">
+    <div class="story">
+      <div class="story__media rv">
+        <div class="media"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80" alt="Our studio" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="story__chip"><b>Since</b><span>2021</span></div>
+      </div>
+      <div class="rv">
+        <span class="eyebrow">Our story</span>
+        <h2 style="font-size:clamp(34px,5vw,54px);margin-top:14px">Cut, sewn and<br>printed in <em>India.</em></h2>
+        <p style="color:var(--ink-2);font-size:16px;margin-top:16px">MERAK started with one complaint — clothes here either cost too much or fall apart too fast. So we built a small label that does neither. Heavyweight fabrics, honest fits and prices that make sense, shipped straight from our studio to your door.</p>
+        <div class="story__stats">
+          <div><b>100%</b><span>Traceable supply</span></div>
+          <div><b>15</b><span>Day returns</span></div>
+          <div><b data-stat="cats">0</b><span>Categories</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec wrap" id="faq" style="padding-top:0">
+    <div class="head" style="justify-content:center;text-align:center">
+      <div><span class="eyebrow">Before you ask</span><h2>The five we<br>get <em>daily.</em></h2></div>
+    </div>
+    <div class="acc-wrap" style="max-width:820px;margin-inline:auto" id="homeFaq"></div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="sec wrap" style="padding-top:0">
+    <div class="news rv">
+      <div class="news__in">
+        <div>
+          <span class="eyebrow" style="color:var(--lime)">The drop list</span>
+          <h2>Be first to the<br><em>new rack.</em></h2>
+        </div>
+        <div>
+          <p>One message a week. New arrivals, sale dates, restocks — nothing else.</p>
+          <form id="newsForm">
+            <input type="email" id="newsEmail" placeholder="your@email.com" required aria-label="Email address">
+            <button class="btn btn--lg" type="submit">Join the list</button>
+          </form>
+          <p class="news__note">Unsubscribe in one tap. We never sell your details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="siteFooter"></div>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

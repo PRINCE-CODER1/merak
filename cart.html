@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Bag — MERAK Clothing</title>
+<meta name="description" content="Review your MERAK bag — quantities, coupons, free shipping progress and checkout." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="cart">
+
+<div id="siteHeader"></div>
+
+<main>
+  <section class="pagehero" style="padding-block:clamp(22px,3vw,34px)">
+    <div class="wrap">
+      <div class="crumbs"><a href="index.html">Home</a> → <a href="shop.html">Shop</a> → <b>Your bag</b></div>
+      <h1>Your <em>bag.</em></h1>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="cartWrap" style="padding-top:0">
+    <div class="cartgrid">
+      <div>
+        <div id="cartLines"></div>
+        <a class="more" href="shop.html" style="display:inline-block;margin-top:10px">← Keep shopping</a>
+      </div>
+      <aside class="summary">
+        <h3>Order summary</h3>
+        <div class="ship">
+          <p id="shipMsg">Free shipping above ₹2,499.</p>
+          <div class="bar"><i id="shipBar" style="width:0"></i></div>
+        </div>
+        <div class="coupon">
+          <input id="code" placeholder="Coupon code" aria-label="Coupon code">
+          <button class="btn btn--sm btn--ink" id="applyCode">Apply</button>
+        </div>
+        <ul class="totals" id="totals"></ul>
+        <button class="btn btn--accent btn--full btn--lg" id="coBtn" style="margin-top:14px">Checkout securely</button>
+        <p class="hint">Try <b>MERAK10</b> · <b>CLUB20</b> above ₹2,999 · <b>SHIPFREE</b></p>
+        <div class="paystrip"><span>UPI</span><span>GPay</span><span>PhonePe</span><span>VISA</span><span>COD</span></div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<div id="siteFooter"></div>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

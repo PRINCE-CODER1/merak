@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop All — MERAK Clothing</title>
+<meta name="description" content="Shop the full MERAK collection — tees, hoodies, shirts, denim, outerwear and accessories. Filter by category, size, colour and budget." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="shop">
+
+<div id="siteHeader"></div>
+
+<main>
+  <section class="pagehero">
+    <div class="wrap">
+      <div class="crumbs"><a href="index.html">Home</a> → <a href="shop.html">Shop</a> → <b id="pCrumbCat">All styles</b></div>
+      <h1 id="shopTitle">Shop <em>all.</em></h1>
+      <p style="color:var(--ink-2);margin-top:12px;max-width:52ch">Every style, one rack. Filter by category, size, colour and budget — prices include GST, what you see is what you pay.</p>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:clamp(28px,4vw,44px)">
+    <div class="wrap">
+      <div class="toolbar">
+        <label class="search">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="q" type="search" placeholder="Search tees, hoodies, denim…" aria-label="Search products">
+        </label>
+        <button class="btn btn--sm btn--ink fbtn" id="fbtn">Filters</button>
+        <select class="sel" id="sort" aria-label="Sort products">
+          <option value="featured">Sort · Featured</option>
+          <option value="new">Newest first</option>
+          <option value="lo">Price · low to high</option>
+          <option value="hi">Price · high to low</option>
+          <option value="rate">Best rated</option>
+          <option value="disc">Biggest discount</option>
+        </select>
+      </div>
+
+      <div class="activefilters" id="activeFilters"></div>
+
+      <div class="shop">
+        <aside class="filters" id="filters">
+          <div class="filters__hd"><h3>Filters</h3><button id="clearF">Clear all</button></div>
+          <div class="fgroup"><h4>Category</h4><div id="fCat"></div></div>
+          <div class="fgroup"><h4>Size</h4><div class="chips" id="fSize"></div></div>
+          <div class="fgroup"><h4>Colour</h4><div class="dots" id="fCol"></div></div>
+          <div class="fgroup">
+            <h4>Max price · <span class="rangeout" id="priceOut">₹6,000</span></h4>
+            <input class="range" id="fPrice" type="range" min="600" max="6000" step="100" value="6000" aria-label="Maximum price">
+          </div>
+          <div class="fgroup"><h4>Only show</h4><div id="fFlag"></div></div>
+        </aside>
+
+        <div>
+          <p class="countline" id="count"></p>
+          <div class="grid" id="grid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="siteFooter"></div>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

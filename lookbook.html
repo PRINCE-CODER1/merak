@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lookbook — MERAK Clothing</title>
+<meta name="description" content="Shop the MERAK lookbook — three complete fits, styled and ready to add to your bag in one tap." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="lookbook">
+
+<div id="siteHeader"></div>
+
+<main>
+  <section class="pagehero">
+    <div class="wrap">
+      <div class="crumbs"><a href="index.html">Home</a> → <a href="shop.html">Shop</a> → <b>Lookbook</b></div>
+      <h1>Styling, <em>done.</em></h1>
+      <p style="color:var(--ink-2);margin-top:12px;max-width:50ch">Three complete fits, styled by our studio team. Add the whole set and a 10% bundle price applies automatically.</p>
+    </div>
+  </section>
+
+  <section class="sec wrap" style="padding-top:clamp(28px,4vw,44px)">
+    <div class="looks" id="lookbookGrid"></div>
+  </section>
+
+  <section class="sec wrap" style="padding-top:0">
+    <div class="news rv">
+      <div class="news__in">
+        <div>
+          <span class="eyebrow" style="color:var(--lime)">Can't decide?</span>
+          <h2>Let the drop list<br><em>decide for you.</em></h2>
+        </div>
+        <div>
+          <p>New looks and styles land every Friday. One short email a week, that's it.</p>
+          <form id="newsForm">
+            <input type="email" id="newsEmail" placeholder="your@email.com" required aria-label="Email address">
+            <button class="btn btn--lg" type="submit">Join the list</button>
+          </form>
+          <p class="news__note">Unsubscribe in one tap. We never sell your details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="siteFooter"></div>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
