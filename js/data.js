@@ -13,85 +13,23 @@ window.MRK = (function () {
     return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
   }
 
-  let artSeq = 0;
   function art(type, c1, c2, bg) {
-    const gid = "g" + (++artSeq);
-    const shapes = {
-      tee:
-        '<path d="M140 152 L170 130 Q200 146 230 130 L260 152 L306 196 L280 226 L262 214 L262 430 Q200 444 138 430 L138 214 L120 226 L94 196 Z" fill="' + c1 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M170 130 Q200 146 230 130" fill="none" stroke="' + INK + '" stroke-width="7" stroke-linecap="round"/>' +
-        '<path d="M152 226 h96" stroke="' + c2 + '" stroke-width="15" stroke-linecap="round"/>',
-      hoodie:
-        '<path d="M136 154 L166 132 Q200 148 234 132 L264 154 L310 200 L282 230 L264 216 L264 434 Q200 448 136 434 L136 216 L118 230 L90 200 Z" fill="' + c1 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M166 132 Q200 148 234 132" fill="none" stroke="' + INK + '" stroke-width="7" stroke-linecap="round"/>' +
-        '<path d="M170 128 Q200 146 230 128 Q220 88 200 88 Q180 88 170 128 Z" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6" stroke-linejoin="round"/>' +
-        '<path d="M191 132 v30 M209 132 v30" stroke="' + INK + '" stroke-width="6" stroke-linecap="round"/>' +
-        '<path d="M152 276 h96 v70 h-96 z" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6" stroke-linejoin="round"/>',
-      shirt:
-        '<path d="M140 152 L170 130 Q200 146 230 130 L260 152 L306 196 L280 226 L262 214 L262 430 Q200 444 138 430 L138 214 L120 226 L94 196 Z" fill="' + c1 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M170 130 L200 158 L230 130" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6" stroke-linejoin="round"/>' +
-        '<path d="M200 158 v272" stroke="' + INK + '" stroke-width="4" stroke-dasharray="8 8"/>' +
-        '<circle cx="200" cy="198" r="5" fill="' + INK + '"/><circle cx="200" cy="240" r="5" fill="' + INK + '"/><circle cx="200" cy="282" r="5" fill="' + INK + '"/><circle cx="200" cy="324" r="5" fill="' + INK + '"/>',
-      jacket:
-        '<path d="M140 152 L170 130 Q200 146 230 130 L260 152 L306 196 L280 226 L262 214 L262 430 Q200 444 138 430 L138 214 L120 226 L94 196 Z" fill="' + c1 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M170 130 L200 172 L200 200 L172 152 Z" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6" stroke-linejoin="round"/>' +
-        '<path d="M230 130 L200 172 L200 200 L228 152 Z" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6" stroke-linejoin="round"/>' +
-        '<path d="M200 200 v230" stroke="' + INK + '" stroke-width="4" stroke-dasharray="7 7"/>' +
-        '<rect x="150" y="416" width="100" height="18" rx="9" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6"/>',
-      coat:
-        '<path d="M138 158 L170 134 Q200 150 230 134 L262 158 L304 202 L280 232 L262 218 L262 462 Q200 476 138 462 L138 218 L120 232 L96 202 Z" fill="' + c1 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M170 134 L200 176 L200 470" fill="none" stroke="' + INK + '" stroke-width="4" stroke-dasharray="8 8"/>' +
-        '<path d="M170 134 L202 178" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6" stroke-linejoin="round"/>' +
-        '<path d="M230 134 L198 178" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6" stroke-linejoin="round"/>' +
-        '<path d="M146 300 h108" stroke="' + c2 + '" stroke-width="14" stroke-linecap="round"/>',
-      dress:
-        '<path d="M140 150 L170 128 Q200 144 230 128 L260 150 L246 238 L302 456 Q200 474 98 456 L154 238 Z" fill="' + c1 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M170 128 Q200 144 230 128" fill="none" stroke="' + INK + '" stroke-width="7" stroke-linecap="round"/>' +
-        '<path d="M152 240 h96" stroke="' + c2 + '" stroke-width="12" stroke-linecap="round"/>' +
-        '<path d="M168 300 L170 452 M232 300 L230 452" stroke="' + INK + '" stroke-width="4" opacity=".3"/>',
-      skirt:
-        '<rect x="148" y="150" width="104" height="20" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6"/>' +
-        '<path d="M150 170 L250 170 L284 452 Q200 464 116 452 Z" fill="' + c1 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M160 174 L144 448 M200 174 L200 458 M240 174 L256 448" stroke="' + INK + '" stroke-width="4" opacity=".35"/>',
-      jeans:
-        '<path d="M142 148 h116 v22 L258 452 L210 452 L204 262 L196 262 L190 452 L142 452 Z" fill="' + c1 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M142 148 h116 v22 L142 170 Z" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6" stroke-linejoin="round"/>' +
-        '<path d="M200 170 L200 262" stroke="' + INK + '" stroke-width="3.5" stroke-dasharray="6 6"/>' +
-        '<path d="M148 184 h24 v26 h-24 z M228 184 h24 v26 h-24 z" fill="none" stroke="' + INK + '" stroke-width="4"/>',
-      shorts:
-        '<path d="M142 150 h116 v22 L258 304 L210 304 L204 262 L196 262 L190 304 L142 304 Z" fill="' + c1 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M142 150 h116 v22 L142 172 Z" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6" stroke-linejoin="round"/>' +
-        '<path d="M200 172 L200 262" stroke="' + INK + '" stroke-width="3.5" stroke-dasharray="6 6"/>' +
-        '<path d="M148 184 h22 v26 h-22 z M230 184 h22 v26 h-22 z" fill="none" stroke="' + INK + '" stroke-width="4"/>',
-      sneaker:
-        '<path d="M106 346 Q112 252 214 246 Q288 242 296 302 L300 346 Z" fill="' + c1 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M92 346 H308 V368 Q308 380 292 380 H108 Q92 380 92 368 Z" fill="' + c2 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M150 252 L176 264 L150 292 L182 306 M204 252 L182 268 L208 292 L176 312" fill="none" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/>' +
-        '<path d="M232 258 h42" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/>',
-      cap:
-        '<path d="M142 172 Q142 104 200 104 Q258 104 258 172 Z" fill="' + c1 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M142 172 L308 172 Q322 174 320 186 Q318 198 302 198 L142 198 Z" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6" stroke-linejoin="round"/>' +
-        '<circle cx="200" cy="110" r="7" fill="' + c2 + '" stroke="' + INK + '" stroke-width="5"/>' +
-        '<path d="M200 104 v68" stroke="' + INK + '" stroke-width="3.5" opacity=".3"/>',
-      tote:
-        '<path d="M128 224 L272 224 L284 380 Q284 396 264 396 L136 396 Q116 396 116 380 Z" fill="' + c1 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M146 224 Q146 170 200 170 Q254 170 254 224" fill="none" stroke="' + INK + '" stroke-width="8" stroke-linecap="round"/>' +
-        '<rect x="168" y="258" width="64" height="34" rx="8" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6"/>',
-      beanie:
-        '<path d="M142 240 Q142 160 200 160 Q258 160 258 240 L142 240 Z" fill="' + c1 + '" stroke="' + INK + '" stroke-width="7" stroke-linejoin="round"/>' +
-        '<path d="M142 240 h116 v22 Q258 276 200 276 Q142 276 142 262 Z" fill="' + c2 + '" stroke="' + INK + '" stroke-width="6" stroke-linejoin="round"/>' +
-        '<circle cx="200" cy="164" r="7" fill="' + c2 + '" stroke="' + INK + '" stroke-width="5"/>'
+    const urls = {
+      tee: "https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=600",
+      hoodie: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=600",
+      shirt: "https://images.pexels.com/photos/297933/pexels-photo-297933.jpeg?auto=compress&cs=tinysrgb&w=600",
+      jeans: "https://images.pexels.com/photos/52518/jeans-pants-blue-shop-52518.jpeg?auto=compress&cs=tinysrgb&w=600",
+      shorts: "https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&w=600",
+      jacket: "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=600",
+      coat: "https://images.pexels.com/photos/2036646/pexels-photo-2036646.jpeg?auto=compress&cs=tinysrgb&w=600",
+      dress: "https://images.pexels.com/photos/1036628/pexels-photo-1036628.jpeg?auto=compress&cs=tinysrgb&w=600",
+      skirt: "https://images.pexels.com/photos/1004014/pexels-photo-1004014.jpeg?auto=compress&cs=tinysrgb&w=600",
+      cap: "https://images.pexels.com/photos/1124465/pexels-photo-1124465.jpeg?auto=compress&cs=tinysrgb&w=600",
+      tote: "https://images.pexels.com/photos/277390/pexels-photo-277390.jpeg?auto=compress&cs=tinysrgb&w=600",
+      beanie: "https://images.pexels.com/photos/852860/pexels-photo-852860.jpeg?auto=compress&cs=tinysrgb&w=600"
     };
-    return (
-      '<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + type + '">' +
-      '<defs><linearGradient id="' + gid + '" x1="0" y1="0" x2="1" y2="1">' +
-      '<stop offset="0%" stop-color="' + lighten(bg || "#F6F4EF", 0.55) + '"/>' +
-      '<stop offset="100%" stop-color="' + (bg || "#F6F4EF") + '"/></linearGradient></defs>' +
-      '<rect width="400" height="500" fill="url(#' + gid + ')"/>' +
-      '<circle cx="200" cy="120" r="230" fill="#ffffff" opacity=".32"/>' +
-      '<ellipse cx="200" cy="452" rx="130" ry="20" fill="' + INK + '" opacity=".08"/>' +
-      '<g transform="translate(0,-8)">' + (shapes[type] || shapes.tee) + '</g></svg>'
-    );
+    const imgUrl = urls[type] || urls.tee;
+    return '<img src="' + imgUrl + '" alt="' + type + '" style="width:100%;height:100%;object-fit:cover;display:block;">';
   }
 
   const BRAND = {
@@ -110,15 +48,15 @@ window.MRK = (function () {
     },
     whatsapp: "https://wa.me/919876543210",
     photos: {
-      heroA: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80",
-      heroB: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80",
-      heroC: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
-      banner: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1600&q=80",
-      story: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
-      look1: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1000&q=80",
-      look2: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80",
-      look3: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
-      mega: "https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?auto=format&fit=crop&w=600&q=80"
+      heroA: "https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=800",
+      heroB: "https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&w=800",
+      heroC: "https://images.pexels.com/photos/2036646/pexels-photo-2036646.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      banner: "https://images.pexels.com/photos/3731256/pexels-photo-3731256.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      story: "https://images.pexels.com/photos/1036627/pexels-photo-1036627.jpeg?auto=compress&cs=tinysrgb&w=900",
+      look1: "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      look2: "https://images.pexels.com/photos/1036628/pexels-photo-1036628.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      look3: "https://images.pexels.com/photos/996330/pexels-photo-996330.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      mega: "https://images.pexels.com/photos/1487809/pexels-photo-1487809.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   };
 
