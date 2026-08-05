@@ -508,9 +508,14 @@
   }
 
   function lookHTML(look, i) {
+    const imagesHTML = look.ids.map(function(id) {
+      const p = MRK.bySlug(id);
+      return '<div style="flex:1; height:100%;">' + MRK.art(p.type, p.c1, p.c2, p.bg) + '</div>';
+    }).join("");
+
     return '<article class="look rv">' +
       '<div class="look__top">' +
-        '<div class="media"><img src="' + photo(look.img) + '" alt="' + look.title + '" loading="lazy" onerror="this.style.display=\'none\'"></div>' +
+        '<div class="media" style="display:flex; gap:2px; background:#fff;">' + imagesHTML + '</div>' +
         '<span class="look__no">LOOK 0' + (i + 1) + "</span>" +
       "</div>" +
       '<div class="look__bd">' +
