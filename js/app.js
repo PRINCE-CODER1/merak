@@ -140,7 +140,7 @@
                 "</div>" +
               "</div>" +
             "</div>" +
-            '<a href="lookbook.html">Lookbook</a>' +
+            '<a href="sustainability.html">Sustainability</a>' +
             '<a href="index.html#story">About</a>' +
             '<a href="index.html#faq">Help</a>' +
           "</nav>" +
@@ -166,7 +166,7 @@
         '<button class="close" id="mclose" aria-label="Close menu">×</button>' +
         '<a href="shop.html">Shop</a>' +
         '<a href="shop.html?flag=new">New In</a>' +
-        '<a href="lookbook.html">Lookbook</a>' +
+        '<a href="sustainability.html">Sustainability</a>' +
         '<a href="index.html#story">About</a>' +
         '<a href="index.html#faq">Help</a>' +
         '<div class="mmenu__meta"><a href="cart.html">My bag</a><a href="#" data-wish-open>Wishlist</a></div>' +
@@ -220,7 +220,7 @@
             "</ul></div>" +
             "<div><h4>Company</h4><ul>" +
               '<li><a href="index.html#story">Our story</a></li>' +
-              '<li><a href="lookbook.html">Lookbook</a></li>' +
+              '<li><a href="sustainability.html">Sustainability</a></li>' +
               '<li><a href="shop.html?flag=new">New arrivals</a></li>' +
               '<li><a href="cart.html">My bag</a></li>' +
             "</ul></div>" +
@@ -444,7 +444,7 @@
       e.preventDefault();
       const l = MRK.LOOKS[+lookAdd.dataset.lookAdd];
       l.ids.forEach(function (id) { MRKStore.addToCart(id); });
-      const res = MRKStore.setCoupon("MERAK10");
+      const res = MRKStore.setCoupon("URBAN10");
       toast("Whole look added · " + (res.ok ? "10% applied" : "10% discount"));
       setTimeout(function () { window.location.href = "cart.html"; }, 700);
       return;

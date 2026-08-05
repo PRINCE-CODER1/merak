@@ -95,13 +95,13 @@ window.MRK = (function () {
   }
 
   const BRAND = {
-    name: "MERAK",
-    logoMark: "MERAK",
+    name: "URBAN PLANET",
+    logoMark: "URBAN PLANET",
     tagline: "Wear your story.",
     blurb: "Independent clothing label making heavy-duty everyday essentials — cut, sewn and printed in India. Built to last beyond the season.",
     phone: "+91 98765 43210",
     phoneLink: "919876543210",
-    email: "hello@merak.in",
+    email: "hello@urbanplanet.in",
     address: "Studio 12, 4th Cross, Indiranagar, Bengaluru 560038",
     social: {
       instagram: "#",
@@ -190,7 +190,7 @@ window.MRK = (function () {
   ];
 
   const COUPONS = {
-    MERAK10: { type: "pct", v: 10, min: 0, label: "10% off your order" },
+    URBAN10: { type: "pct", v: 10, min: 0, label: "10% off your order" },
     CLUB20: { type: "pct", v: 20, min: 2999, label: "20% off above ₹2,999" },
     SHIPFREE: { type: "ship", v: 0, min: 0, label: "Free delivery" }
   };
